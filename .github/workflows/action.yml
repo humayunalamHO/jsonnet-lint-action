@@ -6,6 +6,8 @@ branding:
   icon: 'activity'
   color: 'gray-dark'
 
+on: [push, pull_request]
+
 inputs:
   targets:
     description: |
