@@ -1,9 +1,5 @@
 name: Jsonnet Lint
 
-branding:
-  icon: 'activity'
-  color: 'gray-dark'
-
 on: [push, pull_request]
 
 jobs:
