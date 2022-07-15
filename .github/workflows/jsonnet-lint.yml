@@ -1,0 +1,33 @@
+name: Jsonnet Libt
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: docker build
+        run: |
+          docker build ./ -t jsonnet-build
+
+ #     - name: Lint jsonnet
+ #       # replace "master" with any valid ref
+ #       uses: https://github.com/humayunalamHO/jsonnet-lint-action@main
+ #       with:
+ #         targets: mixin-builder.libsonnet
+
+
+
+
+
+#      # Runs a single command using the runners shell
+#      - name: Run a one-line script
+#        run: echo Hello, world!
+#
+#      # Runs a set of commands using the runners shell
+#      - name: Run a multi-line script
+#        run: |
+#          echo Add other actions to build, another test
+#          echo test, and deploy your project.
