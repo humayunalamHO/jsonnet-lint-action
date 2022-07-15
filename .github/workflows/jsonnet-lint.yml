@@ -14,7 +14,7 @@ jobs:
 
       - name: Lint jsonnet
         # replace "master" with any valid ref
-        uses: humayunalamHO/jsonnet-lint-action@main
+        uses: humayunalamHO/jsonnet-lint-action@master
         with:
           targets: mixin-builder.libsonnet
 
