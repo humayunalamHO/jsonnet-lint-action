@@ -12,11 +12,11 @@ jobs:
         run: |
           docker build ./ -t jsonnet-build
 
-     - name: Lint jsonnet
-       # replace "master" with any valid ref
-       uses: https://github.com/humayunalamHO/jsonnet-lint-action@main
-       with:
-         targets: mixin-builder.libsonnet
+      - name: Lint jsonnet
+        # replace "master" with any valid ref
+        uses: https://github.com/humayunalamHO/jsonnet-lint-action@main
+        with:
+          targets: mixin-builder.libsonnet
 
 
 
