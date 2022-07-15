@@ -1,26 +1,19 @@
 name: Jsonnet Lint
+description: Run Jsonnet Lint
+author: dadav <dadav@protonmail.com>
 
-on: [push, pull_request]
+branding:
+  icon: 'activity'
+  color: 'gray-dark'
 
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    # Important: This sets up your GITHUB_WORKSPACE environment variable
-    - uses: actions/checkout@v2
-
-    - name: Lint jsonnet
-      # replace "master" with any valid ref
-      uses: dadav/jsonnet-lint-action@master
-      with:
-        # [required]
-        # Paths to jsonnet files (i.e., .jsonnet, .libsonnet etc..)
-        # or valid jsonnet directories with globs.
-        # If you want to lint multiple jsonnet files, use the following syntax
-        # targets: |
-        #   config.jsonnet
-        #   templates.libsonnet
-        targets: "i"
-
+inputs:
+  targets:
+    description: |
+      Paths to jsonnet files (i.e., .jsonnet, .libsonnet, etc..)
+      or directories containing those files.
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    TARGETS: ${{ inputs.targets }}
