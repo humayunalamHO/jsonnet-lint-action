@@ -21,18 +21,20 @@ local updateSliSpecList(config, passedSliSpecList) =
           journey: journeyKey,
           mac_version: config.macVersion,
         },
-        dashboardSliLabelSelectors: "service='%(service)s', slo='%(slo)s', environment='$environment',\n          journey='%(journey)s'" % {
-          service: config.product,
-          slo: sliKey,
-          environment: config.environment,
-          journey: journeyKey,
-        },
-        ruleSliLabelSelectors: "service='%(service)s', slo='%(slo)s', environment='%(environment)s',\n          journey='%(journey)s'" % {
-          service: config.product,
-          slo: sliKey,
-          environment: config.environment,
-          journey: journeyKey,
-        },
+        dashboardSliLabelSelectors: "service='%(service)s', slo='%(slo)s', environment='$environment',
+          journey='%(journey)s'" % {
+            service: config.product,
+            slo: sliKey,
+            environment: config.environment,
+            journey: journeyKey,
+          },
+        ruleSliLabelSelectors: "service='%(service)s', slo='%(slo)s', environment='%(environment)s',
+          journey='%(journey)s'" % {
+            service: config.product,
+            slo: sliKey,
+            environment: config.environment,
+            journey: journeyKey,
+          },
       }
       for sliKey in std.objectFields(passedSliSpecList[journeyKey])
     }
