@@ -16,7 +16,7 @@ jobs:
         # replace "master" with any valid ref
         uses: humayunalamHO/jsonnet-lint-action@master
         with:
-          targets: ./
+          targets: ./*
 
 
 
